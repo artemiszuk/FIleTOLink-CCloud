@@ -42,8 +42,6 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
     if not evt.file:
         await evt.reply(start_message)
         return
-        await evt.reply(start_message,buttons=keyboard,parse_mode='md')
-        return
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
     url_button = [
         [
